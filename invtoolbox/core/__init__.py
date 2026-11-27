@@ -1,0 +1,1 @@
+"""Core numerics (no Qt)."""

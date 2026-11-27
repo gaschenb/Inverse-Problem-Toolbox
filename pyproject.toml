@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "invtoolbox"
+version = "1.0.0"
+description = "Inverse Problem Toolbox: 20 linear and nonlinear inverse problems, 22 reconstruction methods (spectral, Krylov, sparsity, TV/TGV primal-dual, Poisson EM, plug-and-play, Bayesian UQ, Gauss-Newton), parameter-choice rules and a PyQt GUI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
+
+[project.urls]
+Homepage = "https://github.com/gaschenb/Inverse-Problem-Toolbox"
+Repository = "https://github.com/gaschenb/Inverse-Problem-Toolbox.git"
+
+[project.optional-dependencies]
+gui = ["PyQt5>=5.15"]
+
+[project.scripts]
+invtoolbox = "invtoolbox.cli:main"
+invtoolbox-gui = "invtoolbox.gui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["invtoolbox*"]
+
+[tool.setuptools.package-data]
+"invtoolbox.core" = ["lam_defaults.json"]
+
